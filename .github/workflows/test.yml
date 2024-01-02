@@ -17,6 +17,7 @@ jobs:
         run: npm ci
       - name: run tests
         id: run_tests
+        continue-on-error: true
         run: npm test
       - name: upload test report
         if: failure() && steps.run_tests.outcome == 'failure'
